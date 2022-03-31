@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Tobias Gutmann" />
+  <meta name="dcterms.date" content="2022-03-31" />
+  <title>Modest (Heading 1)</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../assets/styles/github.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Modest (Heading 1)</h1>
+<p class="author">Tobias Gutmann</p>
+<p class="date">March 31, 2022</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#theme-example">Theme example</a><ul>
+<li><a href="#heading-3">Heading 3</a></li>
+</ul></li>
+<li><a href="#example-code">Example Code</a></li>
+<li><a href="#example-image">Example Image</a><ul>
+<li><a href="#example-lists">Example lists</a></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="theme-example">Theme example</h2>
+<p>This is one of many stylesheets you can use to make your HTML generated from markdown look beautiful. All available themes can be found in <code>assets/styles/</code>.</p>
+<h3 id="heading-3">Heading 3</h3>
+<h4 id="heading-4">Heading 4</h4>
+<h5 id="heading-5">Heading 5</h5>
+<p>A programming language is a type of written language that tells computers what to do. Examples are: Python, Ruby, Java, JavaScript, C, C++, and C#. Programming languages are used to write all computer programs and computer software. A programming language is like a set of instructions that the computer follows to do something.</p>
+<p>Here is an <a href="https://simple.wikipedia.org/wiki/Programming_language">external link</a>. But there are even more elements. A block quote, for example, will look like this:</p>
+<blockquote>
+<p>Another easy to understand pattern is called Singleton. It is used when there can only be one instance of a given class. That class usually has some static method (e.g. getInstance()) which returns a new instance. It also saves the instance internally. So if it already created the instance, it can simply return it.</p>
+</blockquote>
+<h2 id="example-code">Example Code</h2>
+<p>Take a look at same example <code>code</code></p>
+<pre><code>public class Singleton {
+  static Object theInstance = null;
+
+  public Object getInstance() {
+
+        if (theInstance == null) {
+                theInstance = new Object();
+        }
+    
+    return theInstance; 
+  }
+}</code></pre>
+<h2 id="example-image">Example Image</h2>
+<figure>
+<img src="https://source.unsplash.com/gySMaocSdqs/600x400" alt="An image of me, trying to figure out how to use VSCode on an iPad." /><figcaption>An image of me, trying to figure out how to use VSCode on an iPad.</figcaption>
+</figure>
+<h3 id="example-lists">Example lists</h3>
+<p>And of course some lists, to make this theme demo complete:</p>
+<ul>
+<li>Audi</li>
+<li>BMW
+<ul>
+<li>3er</li>
+<li>5er</li>
+</ul></li>
+<li>Skoda</li>
+<li>VW</li>
+</ul>
+<ol type="1">
+<li>Don’t do as I do</li>
+<li>Do as I say</li>
+<li>Yay!</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Tobias Gutmann" />
+  <meta name="dcterms.date" content="2022-03-30" />
+  <title>Markdown to HTML</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../assets/styles/github.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Markdown to HTML</h1>
+<p class="author">Tobias Gutmann</p>
+<p class="date">March 30, 2022</p>
+</header>
+<nav id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#available-themes">Available themes</a><ul>
+<li><a href="#github">Github</a></li>
+<li><a href="#retro">Retro</a></li>
+<li><a href="#modest">Modest</a></li>
+</ul></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#getting-started">Getting started</a><ul>
+<li><a href="#clone-this-repo">Clone this repo</a></li>
+<li><a href="#install-dependencies">Install dependencies</a></li>
+<li><a href="#install-required-vscode-extensions">Install required VSCode extensions</a></li>
+<li><a href="#start-the-live-server">Start the live server</a></li>
+<li><a href="#start-editing">Start editing</a></li>
+</ul></li>
+<li><a href="#customizing">Customizing</a><ul>
+<li><a href="#changing-the-theme">Changing the theme</a></li>
+<li><a href="#removing-the-table-of-contents">Removing the table of contents</a></li>
+</ul></li>
+</ul>
+</nav>
+<h2 id="introduction">Introduction</h2>
+<p>Have you ever just wanted to write something and not think about formatting? This project will help! While there are many online editors for markdown, I don’t want to rely on an online connection to simple put down some notes.</p>
+<p><img src="../assets/img/markdown_logo.png"
+     alt="Typescript logo"
+     style="float: left; margin-right: 20px; margin-top: 10px;"
+/> If you, like me, just want something that renders your markdown to beautiful HTML, reloads your browser on any changes and includes a table of contents at the top of your document, you can finally rest easy. Follow the instructions laid out for you in the <a href="#getting-started">Getting started</a> section. Then, proceed to <a href="#customizing">Customizing</a> to learn how you can change the styling and more.</p>
+<h2 id="features">Features</h2>
+<p>While you can easily extend and customize this repo to fit your needs, these features are provided for you out of the box:</p>
+<ul>
+<li>Live reloading</li>
+<li>Works offline</li>
+<li>Table of contents</li>
+<li>Easily extendable</li>
+<li>Multiple stylesheets available</li>
+<li>Responsive HTML</li>
+</ul>
+<h2 id="available-themes">Available themes</h2>
+<h3 id="github">Github</h3>
+<p><img src="../assets/img/github.css.png"
+     alt="Typescript logo"
+
+/></p>
+<h3 id="retro">Retro</h3>
+<p><img src="../assets/img/retro.css.png"
+     alt="Typescript logo"
+/></p>
+<h3 id="modest">Modest</h3>
+<p><img src="../assets/img/modest.css.png"
+     alt="Typescript logo"
+/></p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>pandoc</li>
+<li>VSCode</li>
+</ul>
+<h2 id="getting-started">Getting started</h2>
+<h3 id="clone-this-repo">Clone this repo</h3>
+<pre><code>git clone git@github.com:Karl-Heinrich/markdown-to-html.git</code></pre>
+<h3 id="install-dependencies">Install dependencies</h3>
+<p>Debian / Ubuntu / Kubuntu etc.</p>
+<pre><code>sudo apt install pandoc</code></pre>
+<p>macOS</p>
+<pre><code>brew install pandoc</code></pre>
+<p>For detailed instructions, visit <a href="https://pandoc.org/installing.html">pandoc.org</a></p>
+<h3 id="install-required-vscode-extensions">Install required VSCode extensions</h3>
+<p>Either go to the extensions menu and install the recommended extensions for this workspace or you can run the following commands:</p>
+<pre><code>code --install-extension emeraldwalk.RunOnSave
+code --install-extension ritwickdey.LiveServer</code></pre>
+<h3 id="start-the-live-server">Start the live server</h3>
+<p>Next, start the live server by hitting the button on the lower right corner of VSCode, which in the following screenshot is highlighted by a red rectangle.</p>
+<figure>
+<img src="../assets/img/go_live_screenshot.jpg" alt="Start the live server in VSCode" /><figcaption>Start the live server in VSCode</figcaption>
+</figure>
+<p>This will start a server on <code>localhost:5500</code> if that port is available. Navigate to <a href="localhost:5500/dist/about.md.html">localhost:5500/dist/about.md.html</a> to take a look at this document in your browser.</p>
+<h3 id="start-editing">Start editing</h3>
+<p>That’s it, you’re done! By default, every file you create inside the <code>src/</code> folder will be rendered to HTML and is available in the <code>dist/</code> folder. Open the file in your browser with live server running and you should see you changes being updated once you save.</p>
+<h2 id="customizing">Customizing</h2>
+<h3 id="changing-the-theme">Changing the theme</h3>
+<p>The themes are located in <code>assets/styles</code> as <code>*.css</code> files. You can add your own or use one of the existing stylesheets. To change the theme, navigate to <code>script/render.sh</code> and search for this line</p>
+<pre><code>pandoc --toc &quot;$file&quot; -s -o ../dist/&quot;$file&quot;.html --css ../assets/styles/retro.css</code></pre>
+<p>At the end of the command, the stylesheet to use is declared. If you want to change it to another theme, simply change the path at the end where it says <code>retro.css</code>. E.g. to switch to the <code>github.css</code> theme file, replace the above line with the following:</p>
+<pre><code>pandoc --toc &quot;$file&quot; -s -o ../dist/&quot;$file&quot;.html --css ../assets/styles/github.css</code></pre>
+<p>Currently available themes are:</p>
+<pre><code>github.css
+modest.css
+retro.css</code></pre>
+<h3 id="removing-the-table-of-contents">Removing the table of contents</h3>
+<p>To remove the table of contents, navigate to <code>script.render.sh</code> and delete the command option <code>--toc</code> from this line</p>
+<pre><code>pandoc --toc &quot;$file&quot; -s -o ../dist/&quot;$file&quot;.html --css ../assets/styles/retro.css</code></pre>
+</body>
+</html>

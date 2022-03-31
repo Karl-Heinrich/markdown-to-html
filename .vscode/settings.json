@@ -1,0 +1,11 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".md",
+                "cmd": "./script/render.sh"
+            },
+        ]
+    },
+    "liveServer.settings.port": 5501
+}
